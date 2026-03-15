@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Live Channels to Top",
+  "version": "1.0.0",
+  "description": "YouTube の左サイドバーで配信中のチャンネルを上に表示します",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["dist/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["dist/inject.js"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ]
+}

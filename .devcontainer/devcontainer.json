@@ -1,0 +1,20 @@
+{
+  "name": "yt-live-up",
+  "image": "ghcr.io/dev-shimada/node-24.12.0-trixie-slim:latest",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "GitHub.copilot"
+      ]
+    }
+  },
+  "workspaceMount": "source=${localWorkspaceFolder}/,target=/workspace,type=bind,consistency=delegated",
+  "mounts": [
+    "source=${env:HOME}/.claude,target=/root/.claude,type=bind",
+    "source=${env:HOME}${env:USERPROFILE}/.aws,target=/root/.aws,readonly,type=bind"
+  ],
+  "remoteUser": "root"
+}
